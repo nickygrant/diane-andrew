@@ -25,6 +25,17 @@ for(const file of files.filter(f=>f.endsWith('.html'))){
     checked++;
   }
 }
+const contact=await readFile(path.join(root,'contact/index.html'),'utf8');
+const email=process.env.CONTACT_EMAIL || 'Dianelumley9@gmail.com';
+assert(contact.includes('data-email="'+email+'"'),'Enquiry form must be connected to Diane email');
+assert(contact.includes('mailto:'+email),'Direct email contact link is missing');
+assert(contact.includes('Your enquiry has not been sent'),'Form must not falsely claim sending');
+for(const guide of ['reiki-roots','after-reiki','reading-or-reiki']){
+  const html=await readFile(path.join(root,'journal',guide,'index.html'),'utf8');
+  assert(html.includes('<article class="article-main">'),`Original journal guide missing: ${guide}`);
+}
+const about=await readFile(path.join(root,'about/index.html'),'utf8');
+assert(about.includes('certificate-high-resolution') || about.includes('certificate-sheet-img'),'Training certificates absent');
 const css=await readFile(path.join(root,'site.css'),'utf8');
 for(const m of css.matchAll(/url\(['"]?([^)'"\s]+)['"]?\)/g))await stat(path.resolve(root,m[1]));
-console.log(`PASS: ${titles.size} pages, ${checked} local references, unique titles, one H1 per page, valid JSON-LD, font assets, and verified Reiki session prices.`);
+console.log(`PASS: ${titles.size} pages, ${checked} local references, unique titles, one H1 per page, valid JSON-LD, font assets, verified Reiki session prices, Diane's working email link and three original journal guides.`);
