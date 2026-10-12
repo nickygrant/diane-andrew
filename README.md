@@ -63,7 +63,11 @@ To install, open `https://github.com/nickygrant/diane-andrew/upload/main/src/ass
 
 ### Email enquiries
 
-The public contact address is **Dianelumley9@gmail.com**. The enquiry form prepares a `mailto:` email with the visitor's selected service and message. Visitors must open their own email application and press **Send**; this static website does **not** send email by itself. It also offers an immediate mailto link on the contact page and in the footer. If automatic on-site submission becomes necessary, a verified form endpoint/email service and an appropriate privacy policy must be configured separately. The public review draft remains intentionally `noindex`.
+The live contact address is **Dianelumley9@gmail.com**. The website contact form now submits visitor name, email, service, format and message via a `POST` to **FormSubmit.co**. The third-party delivery service forwards enquiries to Diane by email after she confirms the recipient address through its one-time activation email. It does **not** require the visitor to open their own email program.
+
+**Activation required:** Diane must visit the public contact page, submit one brief test enquiry, and click the verification link sent by FormSubmit to her Gmail inbox. Check spam if necessary. Until that happens, we cannot verify that enquiries are reaching her. FormSubmit states it holds early submissions pending verification for up to 30 days.
+
+The form includes built-in CAPTCHA support, an anti-spam honeypot, a required processing acknowledgement, and a privacy notice that names FormSubmit as the processor. FormSubmit's 30-day retention and third-party processing should be considered before removing the `noindex` draft flag. The website also provides direct `mailto:` links for visitors who prefer email or whose browser cannot complete the form. No real visitor enquiry was submitted during deployment, and delivery has not been independently verified.
 
 ### Original editorial guides
 
