@@ -2,7 +2,7 @@
 
 Website review draft for Diane Andrew, Psychic Medium and Level 3 Reiki Master.
 
-Two connected service areas: psychic medium readings and spiritual guidance in lavender/purple, and Reiki healing in soft blue. East Yorkshire, with travel within 20 miles of DN14, and online sessions. No prices are displayed.
+Two connected service areas: psychic medium readings and spiritual guidance in lavender/purple, and Reiki healing in soft blue. East Yorkshire, with travel within 20 miles of DN14, and online sessions. Reiki prices from the supplied notes are displayed (£30 for 30 minutes, £60 for 60 minutes, £75 for 90 minutes with chakra balancing; £35 add-on/top-up subject to clarification). Psychic reading rates remain enquiry-only.
 
 ## Run locally
 
@@ -21,11 +21,11 @@ Open http://127.0.0.1:4173. The preview server listens only on this computer.
 - `scripts/build.mjs`: page content, metadata, shared layouts and structured data.
 - `src/site.css`: typography, responsive layouts and the two colour schemes.
 - `src/site.js`: mobile menu and enquiry composer.
-- `src/assets/`: local fonts, open-font licences, original SVG motifs and landscape artwork.
+- `src/assets/`: local fonts, open-font licences, original SVG motifs, landscape artwork and an optimised contact sheet of the supplied three training certificate photographs.
 - `docs/review-notes.md`: research, editorial choices and details to confirm before launch.
 - `docs/artwork.md`: image-generation provenance and the exact final prompt.
 
-`npm run build` creates a portable static site in `dist/`, suitable for a conventional static host. The source repository is private while this is reviewed.
+`npm run build` creates a portable static site in `dist/`, suitable for a conventional static host. The source repository and the GitHub Pages review site are public; the site remains marked as a draft and uses `noindex`, which does not prevent visitors opening it.
 
 ## Draft and launch modes
 
@@ -40,3 +40,11 @@ Confirm all service copy and the final privacy policy before using public mode. 
 ## Verification
 
 `npm run check` checks internal links and assets, unique titles, one H1 per page, parseable structured data, font files and absence of displayed prices. Browser review covers desktop and mobile layouts, service links, FAQ expansion, service preselection and the non-sending enquiry preview.
+
+## Review website
+
+https://nickygrant.github.io/diane-andrew/
+
+The training gallery on the About page presents the three supplied photographs: Reiki third degree (Bridge of Light Association, name printed Diane Lumley), Crystalotherapy Levels 1 & 2 (Crystal Awareness Institute UK, one printed Diane Andrew, another Diane Lumley). The distinct names must be confirmed before final approval.
+
+The stated Reiki rates come from a handwritten note and should be confirmed, especially the £35 add-on/top-up duration. Do not claim therapeutic or medical effects. The enquiry form does not send or save messages in draft mode.
