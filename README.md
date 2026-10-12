@@ -60,3 +60,20 @@ The About page automatically uses individual full-resolution JPEGs when the foll
 If they are absent, the builder falls back to the earlier low-resolution contact sheet. This avoids broken image links while waiting for the original images.
 
 To install, open `https://github.com/nickygrant/diane-andrew/upload/main/src/assets`, upload all three extracted JPEGs with exactly those filenames, and commit directly to main. The Pages workflow rebuilds and publishes automatically. **Do not upload the ZIP file itself; extract the three JPEGs before uploading.** No code edit is needed. This approach displays the true original photographs (1055–1065 pixels wide) and clicking each certificate opens that particular full-size scan.
+
+### Email enquiries
+
+The public contact address is **Dianelumley9@gmail.com**. The enquiry form prepares a `mailto:` email with the visitor's selected service and message. Visitors must open their own email application and press **Send**; this static website does **not** send email by itself. It also offers an immediate mailto link on the contact page and in the footer. If automatic on-site submission becomes necessary, a verified form endpoint/email service and an appropriate privacy policy must be configured separately. The public review draft remains intentionally `noindex`.
+
+### Original editorial guides
+
+Three additional journal articles were created from the supplied handwritten practice notes and the existing site material: `journal/reiki-roots/`, `journal/after-reiki/`, and `journal/reading-or-reiki/`. The copy distinguishes spiritual tradition from established scientific evidence and avoids medical claims.
+
+### Image upload status
+
+The GitHub repository currently contains one uploaded high-resolution certificate named `src/assets/download.jpg` (the third-degree Reiki certificate). The website's About gallery now uses that authentic image as a high-resolution fallback. For the two separate Crystalotherapy certificate images, upload them into `src/assets/` under these exact filenames:
+
+- `crystalotherapy-diane-andrew.jpg`
+- `crystalotherapy-diane-lumley.jpg`
+
+When these files arrive, the build will automatically switch the two remaining certificate panels to their individual high-resolution images.
