@@ -82,3 +82,20 @@
 .certificate-photo-viewport{max-height:530px}
 .service-soft-quote{padding:24px}
 }
+
+/* Original certificate files: preserve full resolution and aspect ratio. */
+.certificate-high-resolution {
+  display:block;
+  width:100%;
+  height:100%;
+  max-width:100%;
+  object-fit:contain;
+  object-position:center;
+  background:#f9f8f5;
+}
+.certificate-photo-viewport:hover .certificate-high-resolution {
+  filter:contrast(1.035);
+}
+.certificate-photo-viewport:focus-visible {
+  outline:3px solid #785991;
+}
