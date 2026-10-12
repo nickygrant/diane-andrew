@@ -30,7 +30,7 @@ const email=process.env.CONTACT_EMAIL || 'Dianelumley9@gmail.com';
 assert(contact.includes('data-email="'+email+'"'),'Enquiry form must be connected to Diane email');
 assert(contact.includes('mailto:'+email),'Direct email contact link is missing');
 assert(contact.includes('method="POST"'),'Enquiry form must use POST');
-assert(contact.includes('action="https://formsubmit.co/'+encodeURIComponent(email)+'"'),'FormSubmit delivery destination must match Diane email');
+assert(contact.includes('action="https://formsubmit.co/'+email+'"'),'FormSubmit delivery destination must match Diane email');
 assert(contact.includes('name="_honey"'),'Honeypot protection must be enabled');
 assert(contact.includes('name="privacy_acknowledgement"') && contact.includes('required'),'Consent acknowledgement required');
 assert(contact.includes('enquiry-received/'),'Post-submit destination missing');
