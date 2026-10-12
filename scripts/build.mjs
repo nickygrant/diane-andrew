@@ -1,4 +1,5 @@
 import { mkdir, readFile, writeFile, cp, rm } from 'node:fs/promises';
+import { existsSync } from 'node:fs';
 import path from 'node:path';
 
 const root = path.resolve('.');
@@ -25,6 +26,14 @@ const href = (current, target) => {
   return result + (target.includes('?') ? '?' + target.split('?')[1] : '');
 };
 const asset = (current,name) => path.posix.relative(path.posix.dirname(current),'assets/'+name);
+const certificateMedia = (name, segment, alt, width, height) => {
+  const originalExists = existsSync(path.join(root, 'src', 'assets', name));
+  const file = originalExists ? name : 'certificates-sheet.webp';
+  const uri = asset('about/index.html', file);
+  const cssClass = originalExists ? 'certificate-high-resolution' : 'certificate-sheet-img sheet-' + segment;
+  return `<a class="certificate-photo-viewport" href="${uri}" target="_blank" rel="noopener noreferrer" aria-label="${originalExists ? 'Open full-resolution certificate photograph' : 'Open certificate contact sheet'} in a new tab"><img class="${cssClass}" src="${uri}" alt="${esc(alt)}" width="${originalExists ? width : 735}" height="${originalExists ? height : 345}" loading="lazy" decoding="async"></a>`;
+};
+
 const link = (current,target,label,className='') => `<a href="${href(current,target)}"${className?` class="${className}"`:''}>${label}</a>`;
 const button = (p,target,label,style='') => link(p,target,`${label} ${arrow}`,`button ${style}`);
 const image = (p,cls='') => `<img class="${cls}" src="${asset(p,'woodland-lake.webp')}" alt="" width="1536" height="1024" fetchpriority="high">`;
@@ -101,21 +110,15 @@ const pages = [
   </div>
   <div class="certificate-grid certificate-grid-photos">
     <article class="certificate-panel">
-      <a class="certificate-photo-viewport" href="${asset('about/index.html','certificates-sheet.webp')}" target="_blank" rel="noopener" aria-label="Open the three supplied certificate photographs in a new tab">
-        <img class="certificate-sheet-img sheet-one" src="${asset('about/index.html','certificates-sheet.webp')}" alt="Photograph of a third-degree Reiki certificate from the Bridge of Light Association in the name Diane Lumley" loading="lazy" width="735" height="345">
-      </a>
+      ${certificateMedia('reiki-third-degree.jpg','one','Original third-degree Reiki training certificate issued by the Bridge of Light Association, in the name Diane Lumley',1055,1491)}
       <div class="certificate-caption"><h3>Third-degree Reiki</h3><p>Usui Shiki Ryoho · Bridge of Light Association. Signed by Janet W Lawson. Name on document: Diane Lumley.</p></div>
     </article>
     <article class="certificate-panel">
-      <a class="certificate-photo-viewport" href="${asset('about/index.html','certificates-sheet.webp')}" target="_blank" rel="noopener" aria-label="Open the three supplied certificate photographs in a new tab">
-        <img class="certificate-sheet-img sheet-two" src="${asset('about/index.html','certificates-sheet.webp')}" alt="Photograph of Levels 1 and 2 Crystalotherapy certificate from Crystal Awareness Institute UK in the name Diane Andrew" loading="lazy" width="735" height="345">
-      </a>
+      ${certificateMedia('crystalotherapy-diane-andrew.jpg','two','Original Crystal Awareness Institute UK Levels 1 and 2 Crystalotherapy certificate, in the name Diane Andrew, dated 31 August 2011',1065,1476)}
       <div class="certificate-caption"><h3>Crystalotherapy Levels 1 &amp; 2</h3><p>Crystal Awareness Institute UK · 31 August 2011. Name on document: Diane Andrew.</p></div>
     </article>
     <article class="certificate-panel">
-      <a class="certificate-photo-viewport" href="${asset('about/index.html','certificates-sheet.webp')}" target="_blank" rel="noopener" aria-label="Open the three supplied certificate photographs in a new tab">
-        <img class="certificate-sheet-img sheet-three" src="${asset('about/index.html','certificates-sheet.webp')}" alt="Photograph of Levels 1 and 2 Crystalotherapy certificate from Crystal Awareness Institute UK in the name Diane Lumley" loading="lazy" width="735" height="345">
-      </a>
+      ${certificateMedia('crystalotherapy-diane-lumley.jpg','three','Original Crystal Awareness Institute UK Levels 1 and 2 Crystalotherapy certificate, in the name Diane Lumley, dated 31 August 2011',1065,1476)}
       <div class="certificate-caption"><h3>Additional certificate copy</h3><p>Crystalotherapy Levels 1 &amp; 2 · Crystal Awareness Institute UK · 31 August 2011. Name on document: Diane Lumley.</p></div>
     </article>
   </div>
