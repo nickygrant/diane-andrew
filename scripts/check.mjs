@@ -27,4 +27,4 @@ for(const file of files.filter(f=>f.endsWith('.html'))){
 }
 const css=await readFile(path.join(root,'site.css'),'utf8');
 for(const m of css.matchAll(/url\(['"]?([^)'"\s]+)['"]?\)/g))await stat(path.resolve(root,m[1]));
-console.log(`PASS: ${titles.size} pages, ${checked} local references, unique titles, one H1 per page, valid JSON-LD, font assets, and no prices.`);
+console.log(`PASS: ${titles.size} pages, ${checked} local references, unique titles, one H1 per page, valid JSON-LD, font assets, and verified Reiki session prices.`);
