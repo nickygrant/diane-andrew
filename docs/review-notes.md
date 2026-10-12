@@ -7,7 +7,7 @@ Prepared 12 October 2026. All marketing copy is original draft wording for Diane
 - Diane Andrew: psychic medium, Reiki practitioner/healer, Level 3 Reiki Master.
 - Readings and spiritual guidance; Reiki healing.
 - East Yorkshire, travelling within 20 miles of DN14; online sessions. “Easy Yorkshire” in the reply was interpreted as East Yorkshire.
-- No public prices. Discuss session arrangements and fees by enquiry.
+- Revised at the user's request: show Reiki rates from the supplied notes — 30 min £30, 60 min £60, 90 min with chakra balancing £75, add-on/top-up £35 (length and conditions unconfirmed). Reading rates remain enquiry-only.
 - Soft, modern, ethereal and readable. Distinct lavender/purple and pale blue areas, angel wings and feathers.
 - The supplied book-page photograph inspired quiet paper tones, ink landscape marks and compassionate language. Its quotation and attribution were not copied.
 
@@ -48,3 +48,17 @@ Draft builds intentionally remain unindexed. Production mode adds canonicals, so
 ## What is included
 
 Home, psychic readings, Reiki healing, about, journal, two short guides, enquiry preview, privacy information and a 404 page. Keyboard-visible focus, skip link, native FAQ disclosures, responsive navigation, reduced-motion support and local font files are included. No payment, booking calendar, newsletter or real message transmission is connected.
+
+## Additional supplied evidence — 12 October 2026
+
+Three actual certificate photographs now appear as a compressed gallery on the About page:
+
+- Bridge of Light Association / Usui Shiki Ryoho, third degree in Reiki. The certificate bears the name **Diane Lumley** and is signed by Janet W Lawson. The certificate photograph does not clearly establish a date.
+- Crystal Awareness Institute UK, Certificate of Achievement for Levels 1 and 2 in Crystalotherapy, signed and dated **31 August 2011**, in the name **Diane Andrew**.
+- A second Crystal Awareness Institute UK Crystalotherapy Levels 1 and 2 certificate of the same date bears the name **Diane Lumley**.
+
+Do not assume or state that the two names refer to the same person until confirmed. Do not state that these courses amount to medical training, government accreditation or scientific proof of clinical efficacy.
+
+A further handwritten notebook photograph supplied Reiki prices and subjective session descriptions. The site uses the practical session-pricing information, but does not adopt unsupported treatment recommendations or promises relating to chronic medical symptoms. Reading prices are unknown.
+
+The original files were downsampled into one lightweight genuine-photograph contact sheet for efficient mobile viewing. A client can click the photographs to open the sheet in a new tab. Higher resolution originals remain available from the user.
