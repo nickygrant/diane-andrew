@@ -20,3 +20,65 @@
 @media(max-width:400px){.site-header{gap:12px}.brand{gap:8px}.brand-name{font-size:26px}.home-intro h1{font-size:39px}.home-intro h1 em{display:block}.path-panel{padding:38px 24px 30px;min-height:475px}.path-panel h2{font-size:38px}.path-panel .eyebrow{font-size:9px}.path-panel p{font-size:12px;margin-top:16px}.panel-symbol{top:30px;width:74px;height:55px}.panel-symbol.sun-symbol{width:43px}.service-hero h1{font-size:45px}.guide-card{grid-template-columns:80px 1fr;gap:16px}.guide-card h3{font-size:26px}}
 @media(max-width:360px){.path-panel h2{font-size:33px}.path-panel{min-height:450px}}
 
+
+
+/* Personal introduction, practice values and authentic certificate gallery */
+.home-story{margin:16px auto 0}
+.story-paper{border:1px solid #ded5e1;background:linear-gradient(126deg,#f6f0f8,#fdfbfa 60%,#e9eff2);border-radius:6px;display:grid;grid-template-columns:1.55fr .8fr;gap:35px;padding:58px clamp(30px,6vw,85px);overflow:hidden}
+.story-paper h2,.about-values h2,.training-inner h2,.certificate-section h2,.pricing-heading h2{font-size:clamp(36px,4vw,58px);margin:17px 0 22px}
+.story-paper h2 em,.about-values h2 em,.training-inner h2 em,.certificate-section h2 em,.pricing-heading h2 em{color:var(--purple);font-weight:400}
+.story-paper p,.about-values p,.training-inner p,.certificate-section p,.pricing-heading p{max-width:670px;color:var(--muted);line-height:1.95}
+.story-signoff{font-family:var(--serif);font-style:italic;font-size:24px!important;color:var(--purple)!important;margin-top:24px!important}
+.story-paper-art{min-height:250px;position:relative;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:16px}
+.story-mark{font-family:var(--serif);font-size:128px;color:#c0aecf;line-height:1}
+.story-ring{position:absolute;border:1px solid #c8c0d5;border-radius:50%;width:190px;height:190px;opacity:.7}
+.story-caption{text-align:center;text-transform:uppercase;letter-spacing:.15em;font-size:9px;color:var(--muted)}
+.micro-credential{display:flex;gap:16px;padding:20px 0;margin:22px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.micro-credential-icon{font-size:25px;color:var(--purple)}
+.micro-credential strong{display:block;font-weight:600;font-size:12px}
+.micro-credential span:last-child{display:block;color:var(--muted);font-size:12px;margin-top:5px;line-height:1.8}
+.service-soft-quote{margin:0 0 26px;padding:30px 40px;border-left:3px solid #997baa;background:#f4eff7}
+.service-soft-quote.blue{background:#ecf3f6;border-color:#7fa7bc}
+.service-soft-quote h2{font-size:36px;margin:9px 0}
+.service-soft-quote p{color:var(--muted);max-width:780px}
+.about-values{padding-top:58px!important}
+.about-values-heading p{max-width:740px}
+.about-values-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px;margin-top:40px}
+.about-values-grid article{background:#fbf8fc;border:1px solid #e3dce8;padding:31px}
+.value-number{font-size:10px;color:var(--purple);letter-spacing:.15em}
+.about-values-grid h3{font-size:33px;margin:20px 0 10px}
+.training-section{background:#eaf0f3}
+.training-inner{display:grid;grid-template-columns:1fr 1fr;gap:65px;padding-block:70px}
+.training-inner p+p{margin-top:15px}
+.certificate-section-intro{max-width:740px;margin-bottom:40px}
+.certificate-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:25px}
+.certificate-panel{min-width:0;background:#fff;border:1px solid #e4dee4;overflow:hidden}
+.certificate-photo-viewport{display:block;width:100%;aspect-ratio:245 / 345;position:relative;overflow:hidden;background:#eee;border:12px solid #fff;outline-offset:3px}
+.certificate-sheet-img{position:absolute;top:0;left:0;height:100%;width:300%;max-width:none;object-fit:fill}
+.certificate-sheet-img.sheet-two{left:-100%}
+.certificate-sheet-img.sheet-three{left:-200%}
+.certificate-caption{padding:21px 23px 28px}
+.certificate-caption h3{font-size:28px;margin:0 0 10px}
+.certificate-caption p{font-size:12px;line-height:1.8;color:var(--muted)}
+.certificate-note{font-size:11px;max-width:900px;margin-top:22px}
+.pricing-section{background:linear-gradient(125deg,#e8f1f5,#f9faf8);padding:70px 0}
+.pricing-heading{display:flex;justify-content:space-between;align-items:end;gap:45px;margin-bottom:34px}
+.pricing-heading>p{max-width:440px;font-size:13px}
+.pricing-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+.price-card{background:#fff;padding:30px 28px 25px;border:1px solid #ccdde4;min-height:205px}
+.price-card.featured{border-top:4px solid #628ba0}
+.price-duration{font-size:12px;font-weight:600;letter-spacing:.03em;color:#53758a}
+.price-amount{font-family:var(--serif);font-size:60px;line-height:1.3;color:#385568;margin-top:7px}
+.price-card p{font-size:12px;color:var(--muted)}
+.price-footnote{font-size:12px;margin-top:24px;max-width:860px;color:#526c79}
+.price-footnote .text-link{display:inline-block;margin-left:4px}
+@media(max-width:760px){
+.story-paper{grid-template-columns:1fr;padding:35px 25px;gap:0}
+.story-paper-art{min-height:160px}.story-mark{font-size:94px}.story-ring{width:140px;height:140px}
+.about-values-grid,.certificate-grid,.pricing-grid{grid-template-columns:1fr}
+.about-values-grid article{padding:26px}.training-inner{grid-template-columns:1fr;gap:10px;padding-block:45px}
+.certificate-grid{max-width:490px;margin:auto}
+.pricing-heading{display:block}.pricing-heading>p{margin-top:18px}.pricing-section{padding:52px 0}
+.certificate-photo-viewport{max-height:530px}
+.service-soft-quote{padding:24px}
+}
