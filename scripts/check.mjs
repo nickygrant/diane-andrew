@@ -13,7 +13,7 @@ for(const file of files.filter(f=>f.endsWith('.html'))){
   assert.equal((html.match(/<h1(?:\s|>)/g)||[]).length,1,`${file}: must have one h1`);
   assert(html.includes('<html lang="en-GB">'),'Language missing');
   assert(html.includes('name="description"'),'Description missing');
-  assert(!/[£$€]\s?\d/.test(html),'No public prices allowed');
+  if(file.endsWith('/reiki-healing/index.html')) assert(html.includes('£30') && html.includes('£60') && html.includes('£75'),'Reiki rates missing');
   for(const match of html.matchAll(/<script type="application\/ld\+json">(.*?)<\/script>/gs))JSON.parse(match[1]);
   for(const match of html.matchAll(/(?:href|src)="([^"]+)"/g)){
     const url=match[1].split('?')[0].split('#')[0];
