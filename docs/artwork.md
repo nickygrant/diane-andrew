@@ -1,0 +1,11 @@
+# Artwork and typography
+
+The website uses original feather and angel-wing SVG motifs drawn in code. They are decorative, not professional certification marks. Cormorant Garamond and Manrope are served locally, with their SIL Open Font Licences stored beside them.
+
+The final illustration is `src/assets/woodland-lake.webp`. It was generated with the built-in image-generation tool and encoded as WebP for the website. It is an illustrative landscape, not a depiction of Diane's premises or an actual local venue. An earlier photographic direction, `src/assets/dawn-lake.webp`, is retained as an unused alternate.
+
+The supplied book-page photograph was used only as a style reference. The website does not reproduce the quotation or falsely attribute original copy to its author.
+
+## Exact final illustration prompt
+
+Use case: illustration-story. Asset type: original landscape illustration for a personal psychic medium and Reiki practitioner's elegant website. The supplied photograph is a STYLE REFERENCE ONLY: use the delicacy of its loose blue pen landscape drawing, lavender watercolor wash, paper whitespace and humble personal printed-book quality. Do not reproduce the photographed page, quotation, words, attribution or layout. Create a new original wide 3:2 illustration of a quiet lake with gently rolling wooded hills, a few tall slender wind-shaped pine trees toward the left and right sides, small reeds, reflections and mist. Expressive imperfect hand-drawn fine blue-grey and faded violet ink lines, sparse pale lavender and powder blue watercolor washes on warm off-white natural paper, gently visible paper grain. Charming artist sketchbook drawing, human and understated, not symmetrical, not digital vector style, not fantasy glossy, not a stock wellness advertisement. Much open pale paper in the upper half; graceful evocative landscape inhabits the lower two thirds. One tiny naturally drawn white feather near the lower right margin if composition permits. Colour restrained to blue ink, lavender wash and warm white. No words, no letters, no quotation marks, no watermark, no border, no logos. Website will crop to a pair of vertical panels, so details should remain harmonious when cropped.
