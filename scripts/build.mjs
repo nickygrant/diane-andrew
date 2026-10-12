@@ -213,6 +213,36 @@ for (const page of pages) {
   await writeFile(destination,document(page),'utf8');
 }
 await writeFile(path.join(dist,'robots.txt'),draft?'User-agent: *\nDisallow: /\n':`User-agent: *\nAllow: /\nSitemap: ${siteUrl}/sitemap.xml\n`);
+// Optional short index for AI clients that voluntarily read llms.txt.
+// This file is not an SEO ranking signal and Google Search does not consume it.
+const llmsText = `# Diane Andrew — Psychic Medium and Reiki Master
+> An independent psychic medium and Reiki practitioner in East Yorkshire, serving the DN14 area and offering online sessions.
+
+Diane Andrew offers psychic medium readings, spiritual guidance and Reiki wellbeing sessions. Third-degree Reiki training in the Usui Shiki Ryoho tradition and Crystalotherapy Level 1 and 2 certificates are described on the About page. Reiki is a complementary wellbeing practice, not healthcare; psychic readings are personal spiritual experiences with no guaranteed predictions or messages.
+
+## Services
+- [Psychic medium readings](${siteUrl}/psychic-readings/): personal readings, mediumship, online and in-person enquiries.
+- [Reiki healing](${siteUrl}/reiki-healing/): fully clothed, touch or hands-off sessions; £30 for 30 minutes, £60 for 60 minutes, £75 for 90 minutes with chakra balancing.
+
+## About and contact
+- [About Diane and her training](${siteUrl}/about/)
+- [Enquire](${siteUrl}/contact/): messages are forwarded by the external FormSubmit service after Diane activates email delivery.
+- Email: ${email}
+- WhatsApp: +44 7756 731671
+- [Instagram](${socialUrls.instagram})
+- [Facebook](${socialUrls.facebook})
+
+## Helpful guides
+- [Journal](${siteUrl}/journal/)
+- [First psychic medium reading](${siteUrl}/journal/first-psychic-reading/)
+- [What happens during Reiki](${siteUrl}/journal/what-is-reiki/)
+- [Reiki’s Japanese origins](${siteUrl}/journal/reiki-roots/)
+- [After Reiki](${siteUrl}/journal/after-reiki/)
+- [Reading or Reiki](${siteUrl}/journal/reading-or-reiki/)
+
+This file is an optional overview, not an alternative to the HTML content.
+`;
+if(siteUrl) await writeFile(path.join(dist,'llms.txt'),llmsText,'utf8');
 await writeFile(path.join(dist,'_headers'),`/*\n  X-Content-Type-Options: nosniff\n  Referrer-Policy: strict-origin-when-cross-origin\n  Permissions-Policy: camera=(), microphone=(), geolocation=()\n${draft?'  X-Robots-Tag: noindex, nofollow\n':''}`);
 if (siteUrl && !draft) {
   await writeFile(path.join(dist,'sitemap.xml'),`<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">${pages.filter(p=>!p.noindex).map(p=>`<url><loc>${esc(siteUrl+'/'+p.file.replace(/index\.html$/,''))}</loc></url>`).join('')}</urlset>`);
