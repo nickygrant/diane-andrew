@@ -42,8 +42,24 @@ for(const guide of ['reiki-roots','after-reiki','reading-or-reiki']){
   const html=await readFile(path.join(root,'journal',guide,'index.html'),'utf8');
   assert(html.includes('<article class="article-main">'),`Original journal guide missing: ${guide}`);
 }
+assert((await readFile(path.join(root,'about/index.html'),'utf8')).includes('certificate-high-resolution') || (await readFile(path.join(root,'about/index.html'),'utf8')).includes('certificate-sheet-img'),'Training certificates absent');
+const homepage=await readFile(path.join(root,'index.html'),'utf8');
+for(const [key,expected] of [['WhatsApp','wa.me/447756731671'],['Instagram','instagram.com/diane.andrewlumley'],['Facebook','facebook.com/profile.php?id=100069583692969']]){
+  assert(homepage.includes(expected),key+' link missing');
+}
+assert(homepage.includes('class="whatsapp-float"'),'Floating WhatsApp button missing');
+assert(!homepage.includes('draft-ribbon') && !homepage.includes('Design preview'),'Preview ribbon must be removed');
+assert(!homepage.includes('noindex'),'Homepage must be indexable for SEO');
 const about=await readFile(path.join(root,'about/index.html'),'utf8');
-assert(about.includes('certificate-high-resolution') || about.includes('certificate-sheet-img'),'Training certificates absent');
+assert(about.includes('diane-portrait.webp'),'Diane portrait missing');
+await stat(path.join(root,'assets','diane-portrait.webp'));
+const robots=await readFile(path.join(root,'robots.txt'),'utf8');
+assert(robots.includes('Allow: /') && robots.includes('Sitemap:'),'Crawl guidance missing');
+const sitemap=await readFile(path.join(root,'sitemap.xml'),'utf8');
+assert(sitemap.includes('https://nickygrant.github.io/diane-andrew/about/'),'Sitemap canonical about URL absent');
+const llms=await readFile(path.join(root,'llms.txt'),'utf8');
+assert(llms.includes('Diane Andrew') && llms.includes('/journal/'),'Optional llms.txt overview missing');
+assert(!about.includes('Diane’s notes') && !homepage.includes('Diane’s notes'),'Private editorial source references must not appear publicly');
 const css=await readFile(path.join(root,'site.css'),'utf8');
 for(const m of css.matchAll(/url\(['"]?([^)'"\s]+)['"]?\)/g))await stat(path.resolve(root,m[1]));
-console.log(`PASS: ${titles.size} pages, ${checked} local references, unique titles, one H1 per page, valid JSON-LD, font assets, verified Reiki session prices, Diane's form delivery address, consent, privacy disclosure and journal guides.`);
+console.log(`PASS: ${titles.size} pages, ${checked} local references, unique titles, one H1 per page, valid JSON-LD, font assets, verified Reiki session prices, Diane's contact form, social links, portrait, robots.txt, sitemap and llms.txt.`);
