@@ -1,4 +1,4 @@
-name: Publish Diane Andrew review site
+name: Publish Diane Andrew website
 on:
   push:
     branches: [main]
@@ -23,11 +23,15 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: '22'
-      - name: Generate review build
+      - name: Generate search-indexable website
         env:
-          DRAFT: 'true'
+          DRAFT: 'false'
+          SITE_URL: 'https://nickygrant.github.io/diane-andrew'
+          CONTACT_EMAIL: 'Dianelumley9@gmail.com'
         run: npm run build
       - name: Verify generated site
+        env:
+          CONTACT_EMAIL: 'Dianelumley9@gmail.com'
         run: npm run check
       - name: Disable Jekyll processing
         run: touch dist/.nojekyll
