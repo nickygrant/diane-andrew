@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 260 320" fill="none" role="img" aria-labelledby="t d">
+<title id="t">Guardian angel line illustration</title><desc id="d">A calm, fine-line angel with a halo, flowing robe and feathered wings</desc>
+<defs><linearGradient id="l" x1="10" y1="50" x2="240" y2="280" gradientUnits="userSpaceOnUse"><stop stop-color="#BDA0C9"/><stop offset="1" stop-color="#7998AA"/></linearGradient></defs>
+<g stroke="url(#l)" stroke-linecap="round" stroke-linejoin="round">
+<ellipse cx="130" cy="42" rx="30" ry="9" stroke-width="1.6" opacity=".85"/>
+<path d="M112 72c0-15 7-26 18-26s18 11 18 26c0 14-9 23-18 23s-18-9-18-23Z" stroke-width="1.8"/>
+<path d="M118 97c-16 18-22 38-27 65-3 19-8 34-18 46M142 97c16 18 22 38 27 65 3 19 8 34 18 46" stroke-width="1.7"/>
+<path d="M123 95c-4 15-3 35 7 46 10-11 11-31 7-46" stroke-width="1.2"/>
+<path d="M108 133c-19 30-20 80-25 128M152 133c19 30 20 80 25 128" stroke-width="1.4"/>
+<path d="M113 153c-3 45-9 102-32 135 30 10 69 10 98 0-23-33-29-90-32-135" stroke-width="1.9"/>
+<path d="M81 287c31-9 67-8 98 0M92 274c26-10 52-10 76 0" stroke-width="1.1" opacity=".75"/>
+<path d="M104 103C54 79 28 112 18 142c-6 19 0 31 16 40M98 111c-37-13-58 8-67 33-6 19-2 31 9 37M94 123c-29-5-42 18-47 37-3 12 0 19 6 23M89 145c-17 10-24 23-28 41" stroke-width="1.9"/>
+<path d="M156 103c50-24 76 9 86 39 6 19 0 31-16 40M162 111c37-13 58 8 67 33 6 19 2 31-9 37M166 123c29-5 42 18 47 37 3 12 0 19-6 23M171 145c17 10 24 23 28 41" stroke-width="1.9"/>
+<path d="M47 110c-13 16-22 31-23 48M62 103c-19 18-27 36-27 57M78 105c-21 23-27 47-25 65M213 110c13 16 22 31 23 48M198 103c19 18 27 36 27 57M182 105c21 23 27 47 25 65" stroke-width="1.05" opacity=".65"/>
+<path d="m122 169 8 10 8-10M130 181v27" stroke-width="1.3"/>
+<path d="M52 240c7-8 13-9 21-7M188 233c8-2 14-1 21 7" stroke-width="1.2"/>
+<path d="M32 77v9m-5-5h10M224 221v9m-5-5h10M193 58v8m-4-4h8" stroke-width="1.5" opacity=".75"/>
+</g></svg>
