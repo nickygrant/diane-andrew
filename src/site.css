@@ -200,3 +200,75 @@
 .small-angel{float:right;max-width:96px;height:auto;opacity:.55;margin:-4px 0 8px 20px}
 @media(max-width:760px){.story-angel{max-height:194px}.small-angel{max-width:66px}}
 .diane-portrait{max-width:317px}
+
+/* Indigo ink and soft featherwork. */
+:root{--ink:#303149;--muted:#646477;--purple:#62517f;--blue:#345477;--indigo:#29355c}
+.brand img{object-fit:contain}
+.home-intro{position:relative}
+.home-intro:before,.home-intro:after{content:"";position:absolute;pointer-events:none;width:75px;height:136px;background:url('./assets/feather.svg') center/contain no-repeat;opacity:.6;top:23px;left:3%;transform:rotate(-30deg)}
+.home-intro:after{left:auto;right:3%;transform:rotate(26deg);width:58px;top:39px;opacity:.4}
+.path-reading:before{background:linear-gradient(180deg,rgba(97,78,137,.08),rgba(52,48,91,.47) 37%,rgba(30,31,66,.95) 100%)}
+.path-panel:after{content:"";position:absolute;pointer-events:none;top:132px;right:9%;width:70px;height:144px;background:url('./assets/feather.svg') center/contain no-repeat;transform:rotate(22deg);opacity:.5;filter:brightness(1.7)}
+.path-reiki:after{transform:rotate(-18deg);right:12%;opacity:.64;filter:none}
+.path-reading .panel-symbol{width:113px;height:72px;opacity:.9}
+.path-reiki .button.blue{background:#344d76}
+.path-reiki{color:#283b55}
+.service-image>img.accent-feather{width:95px;height:172px;object-fit:contain;right:8%;top:51%;z-index:2;opacity:.8;transform:rotate(23deg);filter:brightness(1.5)}
+.service-image.blue>img.accent-feather{filter:none;opacity:.9}
+.story-paper{background:#293454;border-color:#293454;border-radius:2px;position:relative;color:#f6f3fb}
+.story-paper .eyebrow{color:#c7c8e0}
+.story-paper h2{font-size:clamp(34px,3.8vw,53px)}
+.story-paper h2 em{color:#c8c9ed}
+.story-paper p{color:#e0e2ee;font-size:14px;max-width:610px}
+.story-paper .story-signoff{color:#ddd4eb!important;font-size:24px!important}
+.story-paper .story-caption{color:#c7c8dc;font-size:9px}
+.story-angel{width:230px;max-height:295px;opacity:1;filter:brightness(1.55)}
+.story-paper-art{padding-inline:8px}
+.small-angel{max-width:125px;opacity:.9}
+.feather-note img{width:35px;height:70px}
+.feather-divider{opacity:.85}
+.feather-divider img:first-child{width:38px;height:78px}
+.feather-divider img:last-child{opacity:.85}
+.guide-art img{width:90px;height:163px}
+.guide-art.blue{background:#e1e7f1}
+.reiki-theme{--purple:#345477;--lavender:#e5eaf3}
+.reiki-approach{background:#2c405f;border-color:#2c405f;color:#f8f8fc;padding:48px 58px;position:relative}
+.reiki-approach .eyebrow{color:#c4d1e9}
+.reiki-approach p{color:#e1e7f1;max-width:850px}
+.reiki-approach .signature{color:#d1d9ef}
+.price-card.featured{border-top-color:#405c84}
+.price-amount{color:#344b71}
+.certificate-grid{grid-template-columns:repeat(2,minmax(0,1fr));max-width:1040px;gap:38px;margin-inline:auto}
+.certificate-panel{background:transparent;border:0}
+.certificate-photo-viewport{aspect-ratio:1065/1492;border:0;background:#eae7e6;box-shadow:0 5px 23px #28243b12}
+.certificate-high-resolution{background:#eeeae4}
+.certificate-zoom{position:absolute;right:12px;bottom:12px;background:#faf9f6f2;color:#313450;padding:6px 11px;font-size:11px;border:1px solid #ded8e1}
+.certificate-caption{padding:23px 0 8px}
+.certificate-caption .eyebrow{font-size:9px;margin-bottom:10px}
+.certificate-caption h3{font-size:32px}
+.certificate-caption .text-link{font-size:11px;margin-top:12px}
+.certificate-note{margin:30px auto 0;max-width:1040px;border-top:1px solid var(--line);padding-top:18px}
+.spirit-journal{display:grid;grid-template-columns:200px 1fr;gap:55px;padding:55px;background:#eceaf2;margin-top:35px;align-items:center}
+.spirit-journal-art{display:flex;justify-content:center}
+.spirit-journal-art img{width:130px;height:220px;transform:rotate(12deg)}
+.spirit-journal h2{font-size:43px;margin:14px 0 18px}
+.spirit-journal p{max-width:570px;font-size:14px;color:var(--muted)}
+.article-feather{display:flex;justify-content:center;margin:0 0 25px}
+.article-feather img{height:130px;width:90px;transform:rotate(35deg)}
+@media(max-width:1000px){.home-intro:before,.home-intro:after{width:42px;opacity:.3}.home-intro:before{left:0}.home-intro:after{right:0}.story-paper{gap:20px;padding:45px}.story-paper h2{font-size:43px}}
+@media(max-width:760px){
+ .home-intro:before,.home-intro:after{display:none}
+ .path-panel:after{width:58px;top:107px;right:12%;height:126px}
+ .story-paper{padding:34px 25px;gap:6px}
+ .story-paper h2{font-size:37px}
+ .story-paper-art{min-height:225px}
+ .story-angel{max-height:205px;width:180px}
+ .small-angel{max-width:80px}
+ .reiki-approach{padding:32px 26px}
+ .certificate-grid{grid-template-columns:1fr;max-width:470px;gap:38px}
+ .certificate-photo-viewport{max-height:none}
+ .spirit-journal{grid-template-columns:1fr;padding:30px 26px;gap:12px}
+ .spirit-journal-art img{height:120px;width:75px}
+ .spirit-journal h2{font-size:38px}
+ .service-image>img.accent-feather{width:72px;height:143px;top:48%}
+}

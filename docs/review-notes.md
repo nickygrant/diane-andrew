@@ -1,5 +1,7 @@
 # Draft review notes
 
+> Update, 13 October 2026: the site is public at https://nickygrant.github.io/diane-andrew/. See [the current refinement record](refinement-2026-10-13.md) for the latest certificate provenance, content and checks. The launch checklist and original certificate interpretations below are historical, not current requirements.
+
 Prepared 12 October 2026. All marketing copy is original draft wording for Diane's review.
 
 ## Confirmed brief

@@ -13,7 +13,7 @@ for(const file of files.filter(f=>f.endsWith('.html'))){
   assert.equal((html.match(/<h1(?:\s|>)/g)||[]).length,1,`${file}: must have one h1`);
   assert(html.includes('<html lang="en-GB">'),'Language missing');
   assert(html.includes('name="description"'),'Description missing');
-  if(file.endsWith('/reiki-healing/index.html')) assert(html.includes('£30') && html.includes('£60') && html.includes('£75'),'Reiki rates missing');
+  if(path.relative(root,file).split(path.sep).join('/') === 'reiki-healing/index.html') assert(html.includes('£30') && html.includes('£60') && html.includes('£75'),'Reiki rates missing');
   for(const match of html.matchAll(/<script type="application\/ld\+json">(.*?)<\/script>/gs))JSON.parse(match[1]);
   for(const match of html.matchAll(/(?:href|src)="([^"]+)"/g)){
     const url=match[1].split('?')[0].split('#')[0];
@@ -38,7 +38,7 @@ const privacy=await readFile(path.join(root,'privacy/index.html'),'utf8');
 assert(privacy.includes('FormSubmit'),'Contact form processor must be disclosed');
 const thanks=await readFile(path.join(root,'enquiry-received/index.html'),'utf8');
 assert(thanks.includes('has been submitted'),'Submission acknowledgment missing');
-for(const guide of ['reiki-roots','after-reiki','reading-or-reiki']){
+for(const guide of ['reiki-roots','after-reiki','reading-or-reiki','angels-and-feathers']){
   const html=await readFile(path.join(root,'journal',guide,'index.html'),'utf8');
   assert(html.includes('<article class="article-main">'),`Original journal guide missing: ${guide}`);
 }
@@ -51,6 +51,9 @@ assert(homepage.includes('class="whatsapp-float"'),'Floating WhatsApp button mis
 assert(!homepage.includes('draft-ribbon') && !homepage.includes('Design preview'),'Preview ribbon must be removed');
 assert(!homepage.includes('noindex'),'Homepage must be indexable for SEO');
 const about=await readFile(path.join(root,'about/index.html'),'utf8');
+assert.equal((about.match(/class="certificate-high-resolution"/g)||[]).length,2,'Show two full-resolution training certificates');
+assert(!about.includes('certificate-sheet-img'),'Certificate contact sheet must not replace the readable images');
+assert(about.includes('former married name') && about.includes('display copies'),'Explain the display name on the certificates');
 assert(about.includes('diane-portrait.webp'),'Diane portrait missing');
 await stat(path.join(root,'assets','diane-portrait.webp'));
 const robots=await readFile(path.join(root,'robots.txt'),'utf8');
