@@ -1,4 +1,5 @@
 import { mkdir, readFile, writeFile, cp, rm } from 'node:fs/promises';
+import { createHash } from 'node:crypto';
 import path from 'node:path';
 
 const root = path.resolve('.');
@@ -12,6 +13,12 @@ if (!draft && (!siteUrl || !email)) throw new Error('Approved production builds 
 if (path.dirname(dist) !== root || path.basename(dist) !== 'dist') throw new Error('Invalid output directory');
 await mkdir(dist, { recursive: true });
 await cp(path.join(root,'src'),dist,{recursive:true});
+const styleSource = await readFile('src/site.css','utf8');
+const visualSources = await Promise.all(['src/site.js','src/assets/feather.svg','src/assets/wings.svg','src/assets/angel-line.svg'].map(file=>readFile(file)));
+const visualHash = createHash('sha256').update(styleSource);
+for (const source of visualSources) visualHash.update(source);
+const assetVersion = visualHash.digest('hex').slice(0,12);
+await writeFile(path.join(dist,'site.css'),styleSource.replace(/url\((['"]?)(\.\/assets\/[^)'"\s]+)\1\)/g,(_,quote,url)=>`url(${quote}${url}?v=${assetVersion}${quote})`));
 
 const esc = text => String(text).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const arrow = '<span class="arrow" aria-hidden="true">↗</span>';
@@ -24,7 +31,7 @@ const href = (current, target) => {
   result ||= './';
   return result + (target.includes('?') ? '?' + target.split('?')[1] : '');
 };
-const asset = (current,name) => path.posix.relative(path.posix.dirname(current),'assets/'+name);
+const asset = (current,name) => path.posix.relative(path.posix.dirname(current),'assets/'+name) + '?v=' + assetVersion;
 const certificateMedia = (name, alt, width, height) => {
   const uri = asset('about/index.html', name);
   return `<a class="certificate-photo-viewport" href="${uri}" target="_blank" rel="noopener noreferrer" aria-label="Open ${esc(alt)} in a new tab"><img class="certificate-high-resolution" src="${uri}" alt="${esc(alt)}" width="${width}" height="${height}" loading="lazy" decoding="async"><span class="certificate-zoom">View full size ↗</span></a>`;
@@ -198,8 +205,8 @@ function document(page) {
   const p = page.file;
   const navLink = (target,label,cls='') => `<a href="${href(p,target)}"${p===target?' aria-current="page"':''}${cls?` class="${cls}"`:''}>${label}</a>`;
   const pageUrl = siteUrl ? `${siteUrl}/${p.replace(/index\.html$/,'')}` : '';
-  const css = path.posix.relative(path.posix.dirname(p),'site.css');
-  const js = path.posix.relative(path.posix.dirname(p),'site.js');
+  const css = path.posix.relative(path.posix.dirname(p),'site.css') + '?v=' + assetVersion;
+  const js = path.posix.relative(path.posix.dirname(p),'site.js') + '?v=' + assetVersion;
   return `<!doctype html>
 <html lang="en-GB"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#faf9f6"><title>${esc(page.title)}</title><meta name="description" content="${esc(page.description)}"><meta name="robots" content="${draft||page.noindex?'noindex, follow':'index, follow, max-image-preview:large'}">${pageUrl?`<link rel="canonical" href="${esc(pageUrl)}">`:''}<meta property="og:type" content="${page.article?'article':'website'}"><meta property="og:title" content="${esc(page.title)}"><meta property="og:description" content="${esc(page.description)}"><meta property="og:locale" content="en_GB"><meta property="og:site_name" content="Diane Andrew">${pageUrl?`<meta property="og:url" content="${esc(pageUrl)}"><meta property="og:image" content="${siteUrl}/assets/woodland-lake.webp"><meta name="twitter:card" content="summary_large_image">`:''}<link rel="icon" href="${asset(p,'mark.svg')}" type="image/svg+xml"><link rel="preload" href="${asset(p,'cormorant.woff2')}" as="font" type="font/woff2" crossorigin><link rel="stylesheet" href="${css}"><script type="application/ld+json">${schema(page)}</script><script src="${js}" defer></script></head>
 <body class="${page.theme||''}"><a class="skip" href="#main">Skip to content</a><header class="container site-header">${brand(p)}<button class="menu-toggle" aria-expanded="false" aria-controls="main-nav">Menu</button><nav id="main-nav" class="nav" aria-label="Main navigation">${navLink('psychic-readings/index.html','Psychic readings')}${navLink('reiki-healing/index.html','Reiki healing')}${navLink('about/index.html','About Diane','about-nav')}${navLink('journal/index.html','Journal')}${link(p,'contact/index.html','Get in touch '+arrow,'button outline')}</nav></header><main id="main">${page.content(p)}</main>${whatsappWidget}<footer class="container site-footer"><div class="footer-top"><div>${brand(p)}<p>Psychic readings, spiritual guidance &amp; Reiki healing.<br>East Yorkshire · Within 20 miles of DN14 · Online</p><p><a href="mailto:${esc(email)}">${esc(email)}</a></p>${socials(p,"footer-socials")}</div><div class="footer-links"><div>${link(p,'psychic-readings/index.html','Psychic readings')}${link(p,'reiki-healing/index.html','Reiki healing')}${link(p,'about/index.html','About Diane')}</div><div>${link(p,'journal/index.html','The journal')}${link(p,'contact/index.html','Get in touch')}${link(p,'privacy/index.html','Privacy & information')}</div></div></div><div class="footer-bottom"><span>© ${new Date().getUTCFullYear()} Diane Andrew. All rights reserved.</span><span>Personal spiritual guidance. Complementary wellbeing.</span></div></footer></body></html>`;

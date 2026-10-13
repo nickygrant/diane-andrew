@@ -64,5 +64,7 @@ const llms=await readFile(path.join(root,'llms.txt'),'utf8');
 assert(llms.includes('Diane Andrew') && llms.includes('/journal/'),'Optional llms.txt overview missing');
 assert(!about.includes('Diane’s notes') && !homepage.includes('Diane’s notes'),'Private editorial source references must not appear publicly');
 const css=await readFile(path.join(root,'site.css'),'utf8');
-for(const m of css.matchAll(/url\(['"]?([^)'"\s]+)['"]?\)/g))await stat(path.resolve(root,m[1]));
+for(const m of css.matchAll(/url\(['"]?([^)'"\s]+)['"]?\)/g))await stat(path.resolve(root,m[1].split('?')[0]));
+assert(/site\.css\?v=[a-f\d]{12}/.test(homepage),'Styles must be versioned for returning visitors');
+assert(/assets\/feather\.svg\?v=[a-f\d]{12}/.test(css),'CSS artwork must share the new asset version');
 console.log(`PASS: ${titles.size} pages, ${checked} local references, unique titles, one H1 per page, valid JSON-LD, font assets, verified Reiki session prices, Diane's contact form, social links, portrait, robots.txt, sitemap and llms.txt.`);
