@@ -13,7 +13,7 @@ Site: https://nickygrant.github.io/diane-andrew/
 
 ## Account setup still required
 
-The available browser was signed out of Google Analytics, Search Console and Bing Webmaster Tools. No analytics property, dashboard ownership or Google indexing request has been confirmed.
+Separate URL-prefix entries for Diane were started in Google Search Console and Bing Webmaster Tools, and their HTML verification tokens were obtained. The browser connection changed before verification could be completed. The tokens are configured for the next deployment; dashboard ownership, sitemap acceptance and Google indexing requests still need confirmation. No GA4 property or measurement ID has been confirmed. UniEntry and other existing properties have not been changed.
 
 1. Sign into the intended owner Google account. In Analytics, create/select Diane's property, a web data stream for this site, Europe/London time zone and GBP reporting currency. User must personally accept any new account terms. Disable enhanced measurement (particularly forms, outbound clicks and history page views); the site sends only its own consented page view. Keep Google signals, advertising and user-provided data collection off. Use a short retention setting.
 2. Add the real `G-...` ID as the repository Actions variable `GA4_MEASUREMENT_ID`, then deploy. Verify a consented visit in Realtime. Analytics is not connected merely because the code exists.

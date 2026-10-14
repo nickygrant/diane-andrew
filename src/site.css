@@ -370,3 +370,74 @@
  .spirit-journal h2{font-size:38px}
  .service-image>img.accent-feather{width:72px;height:143px;top:48%}
 }
+/* The homepage pairs indigo artwork with a clear, light service selection. */
+.home-sanctuary{position:relative;isolation:isolate;overflow:hidden;background:#182336;color:#f7f3ed;margin-top:28px;min-height:590px;display:flex;align-items:center}
+.sanctuary-art{position:absolute;inset:0 0 0 auto;width:56%;z-index:-2}
+.sanctuary-art img{width:100%;height:100%;object-fit:cover;object-position:center 23%;mask-image:linear-gradient(90deg,transparent,#000 20%)}
+.home-sanctuary:after{content:"";position:absolute;inset:0;z-index:-1;pointer-events:none;background:linear-gradient(90deg,#182336 8%,#182336ed 32%,#18233666 53%,transparent 72%)}
+.sanctuary-copy{width:57%;padding:64px 0 62px 6%}
+.sanctuary-copy>.eyebrow{color:#d4c9b6;letter-spacing:.17em;font-size:10px}
+.sanctuary-copy h1{font-size:clamp(54px,6.2vw,86px);line-height:.99;letter-spacing:-.035em;margin:30px 0 25px}
+.sanctuary-copy h1 em{color:#d3c9e3}
+.sanctuary-services{font-size:12px;letter-spacing:.09em;color:#eae2f2;font-weight:600}
+.sanctuary-lead{max-width:380px;color:#d7dce7;font-size:14px;line-height:1.9;margin-top:17px}
+.sanctuary-actions{display:flex;align-items:center;flex-wrap:wrap;gap:15px 25px;margin-top:29px}
+.sanctuary-actions .text-link{margin:0;color:#ede6f3;border-color:#7c849d;gap:13px}
+.sanctuary-note{font-size:10px;letter-spacing:.06em;color:#b5bed0;margin-top:22px}
+.sanctuary-caption{position:absolute;right:27px;bottom:23px;color:#ded7cb;font-size:8px;letter-spacing:.2em;text-transform:uppercase;writing-mode:vertical-rl}
+.home-paths{display:grid;grid-template-columns:1fr 1fr;border:1px solid #d9d6e2;border-top:0}
+.home-path{display:grid;grid-template-columns:57px 1fr;gap:23px;padding:32px 36px;background:#efebf3}
+.home-path-reiki{background:#e9eff2;border-left:1px solid #d4dce4}
+.home-path-symbol{color:#685c83;padding-top:6px}
+.home-path-symbol svg{width:100%;height:62px}
+.home-path-reiki .home-path-symbol{color:#4b6682;width:42px;margin:auto;margin-top:4px}
+.home-path .eyebrow{font-size:9px;color:#605775;letter-spacing:.12em}
+.home-path h2{font-size:35px;margin:9px 0 12px}
+.home-path h2 a{display:flex;align-items:center;justify-content:space-between;gap:15px}
+.home-path h2 .arrow{font-size:25px;color:#6c6384}
+.home-path p{font-size:12px;line-height:1.85;color:#535b70;max-width:350px}
+.home-path .text-link{margin-top:13px;font-size:11px;padding-bottom:3px}
+.home-booking{display:grid;grid-template-columns:.9fr 1.1fr;gap:100px;padding-block:75px;border-bottom:1px solid var(--line)}
+.home-booking .eyebrow{color:var(--purple);margin-bottom:20px}
+.home-booking h2 em{color:var(--purple)}
+.home-booking>div>p{max-width:350px;color:var(--muted);font-size:14px;margin:20px 0 26px}
+.booking-steps{list-style:none;margin:0;padding:0}
+.booking-steps li{display:flex;gap:23px;padding:24px 0;border-bottom:1px solid var(--line)}
+.booking-steps li:first-child{padding-top:0}.booking-steps li:last-child{border-bottom:0;padding-bottom:0}
+.booking-steps li>span{color:#79658b;font:italic 25px var(--serif);padding-top:5px}
+.booking-steps h3{font-size:29px;margin:0 0 10px}
+.booking-steps p{font-size:13px;color:var(--muted);line-height:1.85}
+.contact-quick{display:flex;align-items:center;justify-content:space-between;gap:35px;padding:30px 34px;background:#eae8f1;border:1px solid #dad5e3;margin-bottom:45px}
+.contact-quick h2{font-size:32px;margin:8px 0 11px}.contact-quick p{font-size:13px;color:var(--muted)}
+.contact-quick-actions{display:flex;flex-wrap:wrap;gap:12px;justify-content:flex-end}
+@media(min-width:761px) and (max-width:1050px){.sanctuary-copy{width:63%;padding-left:5%}.sanctuary-art{width:59%}.home-path{padding:27px;gap:15px;grid-template-columns:42px 1fr}.home-path h2{font-size:30px}.home-booking{gap:55px}}
+@media(max-width:760px){
+ .home-sanctuary{min-height:0;margin-top:18px;display:flex;flex-direction:column;align-items:stretch}
+ .sanctuary-art{position:relative;inset:auto;order:2;z-index:0;width:100%;height:340px;margin-top:-32px}
+ .sanctuary-art img{object-fit:cover;object-position:center 22%;mask-image:linear-gradient(180deg,transparent,#000 23%)}
+ .home-sanctuary:after{display:none}
+ .sanctuary-copy{width:100%;padding:34px 27px 20px;z-index:1}
+ .sanctuary-copy>.eyebrow{font-size:8px;letter-spacing:.12em}
+ .sanctuary-copy h1{font-size:clamp(47px,12vw,68px);margin:25px 0 23px}
+ .sanctuary-services{font-size:11px;letter-spacing:.04em}
+ .sanctuary-lead{font-size:13px;line-height:1.85;margin-top:16px}
+ .sanctuary-actions{gap:18px;margin-top:24px}.sanctuary-actions .button{padding:12px 17px;font-size:11px}
+ .sanctuary-note{font-size:9px;margin-top:17px}
+ .sanctuary-caption{z-index:2;bottom:16px;right:13px;font-size:7px}
+ .home-paths{grid-template-columns:1fr}.home-path{padding:27px 24px;gap:17px;grid-template-columns:41px 1fr}
+ .home-path-reiki{border-left:0;border-top:1px solid #d4dce4}
+ .home-path h2{font-size:31px}.home-path-symbol svg{height:45px}.home-path-reiki .home-path-symbol{width:35px}
+ .home-path .eyebrow{font-size:8px}.home-path p{font-size:12px}
+ .home-booking{grid-template-columns:1fr;gap:35px;padding-block:50px}
+ .contact-quick{display:block;padding:25px}.contact-quick-actions{margin-top:22px;justify-content:flex-start}
+}
+@view-transition{navigation:auto}
+::view-transition-old(root),::view-transition-new(root){animation-duration:180ms}
+@media(prefers-reduced-motion:reduce){@view-transition{navigation:none}html{scroll-behavior:auto}::view-transition-old(root),::view-transition-new(root){animation:none}}
+.payment-panel{display:flex;justify-content:space-between;align-items:center;gap:35px;margin-top:30px;padding:30px 32px;background:#fff;border:1px solid #cbd9e4}
+.payment-panel .eyebrow{color:#506780;font-size:9px}.payment-panel h3{font-size:31px;margin:10px 0 12px;color:#2c405f}
+.payment-panel p{font-size:12px;line-height:1.85;color:#596878;max-width:620px}.payment-panel strong{font-weight:600}
+.payment-panel .paypal-link{flex-shrink:0;background:#263d68;border-radius:3px}.payment-panel .paypal-link:hover{background:#172c50}
+.price-card{display:flex;flex-direction:column;align-items:flex-start}.price-card .text-link{margin-top:auto;padding-top:20px;font-size:11px;gap:13px}
+.price-card p{margin-bottom:8px}
+@media(max-width:760px){.payment-panel{display:block;padding:26px}.payment-panel h3{font-size:29px}.payment-panel .paypal-link{margin-top:22px}}
