@@ -441,3 +441,7 @@
 .price-card{display:flex;flex-direction:column;align-items:flex-start}.price-card .text-link{margin-top:auto;padding-top:20px;font-size:11px;gap:13px}
 .price-card p{margin-bottom:8px}
 @media(max-width:760px){.payment-panel{display:block;padding:26px}.payment-panel h3{font-size:29px}.payment-panel .paypal-link{margin-top:22px}}
+.home-theme h1,.home-theme h2,.payment-panel h3{text-wrap:balance}
+.service-price-link{display:inline-block;margin:14px 0 0 20px;border-bottom:1px solid #8194ae;font-size:12px;color:#344d76;padding-bottom:4px}
+.service-price-link:hover{border-color:currentColor}
+@media(max-width:760px){.sanctuary-art{height:275px}.service-price-link{display:block;width:fit-content;margin:19px 0 0}}

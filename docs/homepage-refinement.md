@@ -13,4 +13,4 @@ Primary implementation references:
 - [Google Chrome: cross-document view transitions](https://developer.chrome.com/docs/web-platform/view-transitions/cross-document)
 - [W3C: form labels](https://www.w3.org/WAI/tutorials/forms/labels/)
 
-The source and generated-page checks pass. Browser inspection was interrupted by the browser connection/policy, so do not treat source validation as a visual mobile QA pass.
+The first published revision was inspected at 1280 px and 390 px: no horizontal overflow, mobile navigation opens, the angel loads, and the PayPal destination matches the supplied QR. The later optimization adds 512/768 px responsive artwork (68.6/151.8 kB), a shorter mobile hero, a direct prices anchor, and preserved session duration across the form, WhatsApp and email. Source/generated-page checks and a focused booking-context check pass. A further visual check of this optimization remains pending after the browser connection dropped.
