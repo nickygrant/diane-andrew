@@ -38,9 +38,9 @@ const privacy=await readFile(path.join(root,'privacy/index.html'),'utf8');
 assert(privacy.includes('FormSubmit'),'Contact form processor must be disclosed');
 const thanks=await readFile(path.join(root,'enquiry-received/index.html'),'utf8');
 assert(thanks.includes('has been submitted'),'Submission acknowledgment missing');
-for(const guide of ['reiki-roots','after-reiki','reading-or-reiki','angels-and-feathers']){
+for(const guide of ['reiki-roots','after-reiki','reading-or-reiki','angels-and-feathers','quiet-moments','online-psychic-readings']){
   const html=await readFile(path.join(root,'journal',guide,'index.html'),'utf8');
-  assert(html.includes('<article class="article-main">'),`Original journal guide missing: ${guide}`);
+  assert(/<article class="(?:article-main|night-article)"/.test(html),`Original journal guide missing: ${guide}`);
 }
 assert((await readFile(path.join(root,'about/index.html'),'utf8')).includes('certificate-high-resolution') || (await readFile(path.join(root,'about/index.html'),'utf8')).includes('certificate-sheet-img'),'Training certificates absent');
 const homepage=await readFile(path.join(root,'index.html'),'utf8');

@@ -20,7 +20,9 @@ The contact form uses FormSubmit.co to forward enquiries. **Diane must activate 
 - Original articles on Reiki's Japanese history, what happens during and after sessions, choosing a reading or Reiki, and introductory guides
 - Enhanced portrait, lavender angel and feather artwork, original landscape artwork, and locally hosted fonts
 
-Original certificate copies are retained in the repository with their original printed names. One full-resolution Reiki certificate is available as `src/assets/download.jpg`; the remaining two certificate panels still use low-resolution scans until the original JPEG files are uploaded as `crystalotherapy-diane-andrew.jpg` and `crystalotherapy-diane-lumley.jpg`.
+The gallery shows two full-resolution training certificates with full-size links. Original-name copies are retained and linked; the gallery explains that the Diane Andrew images are display copies reflecting her return to her maiden name.
+
+Two special journal pages use deep indigo and blue artwork: angels and feathers, and quiet moments. A new online-readings guide covers preparation and practical arrangements. The main service pages keep the lighter design.
 
 ## Search indexing and AI search
 The GitHub Pages workflow publishes with `DRAFT=false`, `SITE_URL=https://nickygrant.github.io/diane-andrew` and the contact email configured. It generates canonical tags, `sitemap.xml`, `robots.txt`, `llms.txt`, descriptive titles and metadata, plus JSON-LD person, article, breadcrumb and service descriptions.
@@ -40,3 +42,5 @@ npm run dev
 Without `SITE_URL`, local builds use a non-indexed preview mode. The GitHub Actions workflow sets production variables and publishes the site. The HTML pages are built by `scripts/build.mjs`, layout is in `src/site.css`, and minimal scripts in `src/site.js`.
 
 Review changes using the deployment workflow at https://github.com/nickygrant/diane-andrew/actions. Do not invent qualifications, testimonials, appointments, a street address or health benefits. Reiki is a complementary wellbeing practice, not a replacement for medical treatment.
+
+Search dashboard setup, account prerequisites and the consent-gated Analytics integration are documented in [docs/search-setup.md](docs/search-setup.md). Artwork prompts and outputs are recorded in [docs/indigo-artwork.md](docs/indigo-artwork.md).
